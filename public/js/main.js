@@ -19490,7 +19490,7 @@ module.exports = validateDOMNesting;
 module.exports = require('./lib/React');
 
 },{"./lib/React":55}],168:[function(require,module,exports){
-var react = require('react');
+var React = require('react');
 var ListItem = require('./ListItem.jsx');
 
 var ingredients = [{ "id": 1, "text": "Item 1" }, { "id": 2, "text": "Item 2" }, { "id": 3, "text": "Item 3" }];
@@ -19499,11 +19499,19 @@ var List = React.createClass({
   displayName: 'List',
 
   render: function () {
-    var listItmes = ingredients.map(function (item) {
+    var listItems = ingredients.map(function (item) {
       return React.createElement(ListItem, { ingredient: item.text, key: item.id });
     });
+
+    return React.createElement(
+      'ul',
+      null,
+      listItems
+    );
   }
 });
+
+module.exports = List;
 
 },{"./ListItem.jsx":169,"react":167}],169:[function(require,module,exports){
 var React = require('react');

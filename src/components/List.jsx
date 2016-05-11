@@ -1,4 +1,4 @@
-var react = require('react');
+var React = require('react');
 var ListItem  = require('./ListItem.jsx');
 
 var ingredients = [
@@ -9,8 +9,12 @@ var ingredients = [
 
 var List = React.createClass({
   render:function(){
-    var listItmes  = ingredients.map(function(item){
+    var listItems  = ingredients.map(function(item){
       return <ListItem ingredient={item.text} key={item.id}/>;
     });
+
+    return (<ul>{listItems}</ul>)
   }
 });
+
+module.exports = List;
